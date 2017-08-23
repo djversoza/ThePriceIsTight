@@ -3,18 +3,26 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      loggedin: true,
+    };
+  }
+
   render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+    const hello = (
+        <div className="row">
+          <h1>yooo</h1>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
     );
+
+    const two = (
+        <h1>Two</h1>
+    );
+
+    return <div className="container">{this.state.loggedin ? hello : two}</div>
+
   }
 }
 
