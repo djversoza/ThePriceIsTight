@@ -1,3 +1,40 @@
 .login{
   margin: 5px;
 }
+
+.container-fluid{
+  padding: 0px;
+}
+
+#register{
+  border: 5px solid white;
+  padding: 15px 45px 15px 45px;
+}
+
+#stuff{
+  height: 450px;
+  background-color: 'white';
+}
+
+.boxes{
+  height: 500px;
+  background-image: url('https://c2.staticflickr.com/8/7378/27292006700_0e9716cffb_h.jpg');
+  background-position: center;
+  text-align: center;
+}
+
+.boxes2{
+  height: 250px;
+  background-image: url('https://c2.staticflickr.com/8/7378/27292006700_0e9716cffb_h.jpg');
+  background-position: center;
+  text-align: center;
+}
+
+.topItems{
+  position: relative;
+  margin: 0px auto;
+}
+
+img{
+  width:100%;
+}

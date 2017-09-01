@@ -5,8 +5,23 @@ class Main extends Component {
   render() {
     return(
       <div>
-        <Link to="/"><h1>hi</h1></Link>
-        <h1>hi</h1>
+        <nav className="navbar navbar-default navbar-fixed-top">
+          <div className="container-fluid">
+
+            <div className="navbar-header">
+              <a className="navbar-brand" href="#">Brand</a>
+              <a className="navbar-brand" href="#">Brand</a>
+            </div>
+
+            <Link to="/"><button type="submit" className="btn btn-primary login navbar-right">Logout</button></Link>
+
+          </div>
+        </nav>
+
+        <div className="container">
+          <h1>woah</h1>
+        </div>
+
       </div>
     )
   }
