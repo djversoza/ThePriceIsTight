@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
 class Main extends Component {
+  componentWillMount(){
+    console.log( this.props.location.state.thang)
+  }
+
   render() {
     return(
       <div>

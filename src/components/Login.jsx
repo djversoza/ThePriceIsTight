@@ -17,22 +17,25 @@ class Login extends Component {
   login(e){
     e.preventDefault();
 
-    // fetch('http://127.0.0.1:3001/endPoints/', {
-    //   method: 'POST',
-    //     headers: {
-    //       'Accept' : 'application/json',
-    //       'Content-Type': 'application/json'
-    //     },
-    //       body: JSON.stringify({
-    //         message: 'hit'
-    //       })
-    // })
-    // .then((res) => res.json())
-    // .then((resp) => {
-    //     this.props.history.push("/main");
-    //
-    // })
-    console.log(this.state.username)
+    fetch('http://127.0.0.1:3001/endPoints/', {
+      method: 'POST',
+        headers: {
+          'Accept' : 'application/json',
+          'Content-Type': 'application/json'
+        },
+          body: JSON.stringify({
+            message: 'hit'
+          })
+    })
+    .then((res) => res.json())
+    .then((resp) => {
+        this.props.history.push({
+          pathname: "/main",
+          state: {thang: 'yo'}
+        });
+
+    })
+
   }
 
   updateInputValue(evt) {
@@ -44,40 +47,47 @@ class Login extends Component {
   render() {
     return(
     <div>
+
+
       <nav className="navbar navbar-default navbar-fixed-top">
+
         <div className="container-fluid">
+
           <div className="navbar-header">
             <a className="navbar-brand" href="#">Brand</a>
             <a className="navbar-brand" href="#">Brand</a>
-
-
           </div>
-          <form id="signin" className="navbar-form navbar-right" role="form">
-                       <div className="input-group login">
-                           <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span>
-                           <input id="email" type="email" className="form-control" value={this.state.username} onChange={this.updateInputValue.bind(this)} name="email" placeholder="Email Address"/>
-                       </div>
 
-                       <div className="input-group login">
-                           <span className="input-group-addon"><i className="glyphicon glyphicon-lock"></i></span>
-                           <input id="password" type="password" className="form-control" name="password" placeholder="Password"/>
-                       </div>
+            <form id="signin" className="navbar-form navbar-right" role="form">
+              <div className="input-group login">
+                <span className="input-group-addon"><i id="icon" className="glyphicon glyphicon-user"></i></span>
+                <input id="email" type="email" className="form-control" value={this.state.username} onChange={this.updateInputValue.bind(this)} name="email" placeholder="Email Address"/>
+              </div>
 
-                       <button type="submit" onClick={this.login.bind(this)} className="btn btn-primary login">Login</button>
-                  </form>
+              <div className="input-group login">
+               <span className="input-group-addon"><i id="icon" className="glyphicon glyphicon-lock"></i></span>
+               <input id="password" type="password" className="form-control" name="password" placeholder="Password"/>
+              </div>
+
+              <button type="submit" onClick={this.login.bind(this)} className="btn btn-primary login">Login</button>
+            </form>
         </div>
+
       </nav>
 
-
       <div className="container-fluid">
+
+
 
         <div className="boxes">
           <h1 className="topItems">Woooow</h1>
           <h1 className="topItems">Woooow</h1>
           <h1 className="topItems">Woooow</h1>
-          <div>
-          <button id="register" className="topItems">Register</button>
-          </div>
+
+        <div>
+            <button id="register" className="topItems">Register</button>
+        </div>
+
         </div>
 
         <div id="stuff">
@@ -88,6 +98,7 @@ class Login extends Component {
           <h1 className="topItems">Woooow</h1>
           <h1 className="topItems">Woooow</h1>
           <h1 className="topItems">Woooow</h1>
+
         </div>
 
       </div>
