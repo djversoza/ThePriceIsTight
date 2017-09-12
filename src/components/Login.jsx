@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import Main from './Main.jsx';
+import Modal from './Modal.jsx';
 import '../App.css';
 
 class Login extends Component {
@@ -10,6 +11,7 @@ class Login extends Component {
     this.state = {
       username: '',
       password: '',
+      modalIsOpen: false,
     }
   };
 
@@ -36,19 +38,27 @@ class Login extends Component {
 
     })
 
+  };
+
+  register(){
+    this.setState({modalIsOpen: true});
+  }
+
+  closeModal(){
+    this.setState({modalIsOpen: false});
   }
 
   updateInputValue(evt) {
    this.setState({
      username: evt.target.value
    });
- }
+ };
 
   render() {
     return(
     <div>
 
-
+      <Modal isOpen={this.state.modalIsOpen} closeModal={this.closeModal.bind(this)}></Modal>
       <nav className="navbar navbar-default navbar-fixed-top">
 
         <div className="container-fluid">
@@ -85,7 +95,7 @@ class Login extends Component {
           <h1 className="topItems">Woooow</h1>
 
         <div>
-            <button id="register" className="topItems">Register</button>
+            <button onClick={this.register.bind(this)} id="register" className="topItems">Register</button>
         </div>
 
         </div>
